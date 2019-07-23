@@ -8,6 +8,7 @@ const request = supertest.agent(app);
 
 const planType1 = testHelper.planType1;
 const badMember = testHelper.badMember;
+const member1 = testHelper.member1;
 
 describe('Plan Controller', () => {
   beforeAll((done) => {
@@ -86,13 +87,23 @@ describe('Plan Controller', () => {
           done();
         });
     });
-    it('should add member to a plan', (done) => {
+    it('should throw error if required fields are not added', (done) => {
       request
         .post('/api/v1/plans/1/members')
         .send(badMember)
         .set('Accept', 'application/json')
         .end((err, response) => {
           expect(response.status).to.equal(400);
+          done();
+        });
+    });
+    it('should add members to a plan', (done) => {
+      request
+        .post('/api/v1/plans/1/members')
+        .send(member1)
+        .set('Accept', 'application/json')
+        .end((err, response) => {
+          expect(response.status).to.equal(201);
           done();
         });
     });
