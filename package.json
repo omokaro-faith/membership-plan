@@ -1,0 +1,35 @@
+{
+  "name": "membership-plan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest --detectOpenHandles test",
+    "start:dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "dotenv": "^8.0.0",
+    "express": "~4.16.1",
+    "jest": "^24.8.0",
+    "morgan": "~1.9.1",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omokaro-faith/membership-plan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omokaro-faith/membership-plan/issues"
+  },
+  "homepage": "https://github.com/omokaro-faith/membership-plan#readme"
+}
