@@ -13,7 +13,11 @@ To start the API server on your machine:
 - Clone this repo.
 - Run npm install in the directory you cloned the repo.
 - Run export DATABASE_URL='database name'  
-- Create a .env file in the root of the directory and add in it details as shown in the .env-sample file
+- Run export DATABASE_URL=`online database url, if you're using a PostgreSQL database hosting service.`
+- Run sequelize db:migrate
+or
+- Run createdb database_development
+- NODE_ENV=development sequelize db:migrate
 
 - Run npm start:dev to start the server and access the API on localhost:8000/api/v1/'endpoints'
 
@@ -21,7 +25,7 @@ To start the API server on your machine:
 
 1. createdb database_test
 2. NODE_ENV=test sequelize db:migrate
-Run npm test to run the tests.
+3. Run npm test to run the tests.
 
 
 ## Routes
